@@ -16,9 +16,12 @@ st.set_page_config(
 # CSS personnalisé pour un design moderne
 st.markdown("""
     <style>
-    .main {
+    /* Fond général de l'app */
+    div[data-testid="stAppViewContainer"] {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
+
+    /* Style des métriques */
     .stMetric {
         background: rgba(255, 255, 255, 0.1) !important;
         backdrop-filter: blur(10px) !important;
@@ -26,19 +29,23 @@ st.markdown("""
         border-radius: 15px !important;
         border: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
+
     .stMetric > div {
         background: transparent !important;
     }
+
     [data-testid="stMetricValue"] {
         font-size: 2.5rem !important;
         font-weight: bold !important;
     }
+
     h1 {
         color: white;
         text-align: center;
         font-size: 3em;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
+
     .metric-card {
         background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
         backdrop-filter: blur(10px);
