@@ -79,7 +79,7 @@ with st.sidebar:
             text-align: center;
             background: rgba(255, 255, 255, 0.05);
         ">
-            💻 Codé by Ahmed Mohamed & Victor
+            💻 Fait par Ahmed, Mohamed & Victor
         </div>
     """, unsafe_allow_html=True)
 
