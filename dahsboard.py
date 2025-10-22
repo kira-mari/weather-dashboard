@@ -70,6 +70,9 @@ with st.sidebar:
     st.markdown("### 📊 Informations")
     st.info("Format attendu: Date, Heure, Température, Humidité, Pression, Lumière, Latitude, Longitude, Altitude")
 
+    st.markdown("---")
+    st.markdown("💻 Codé by Ahmed Mohamed & Victor")
+
 # Fonction pour charger et traiter les données
 @st.cache_data
 def load_data(file):
