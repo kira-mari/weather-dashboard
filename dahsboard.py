@@ -71,7 +71,17 @@ with st.sidebar:
     st.info("Format attendu: Date, Heure, Température, Humidité, Pression, Lumière, Latitude, Longitude, Altitude")
 
     st.markdown("---")
-    st.markdown("💻 Codé by Ahmed Mohamed & Victor")
+    st.markdown("""
+        <div style="
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        ">
+            💻 Codé by Ahmed Mohamed & Victor
+        </div>
+    """, unsafe_allow_html=True)
 
 # Fonction pour charger et traiter les données
 @st.cache_data
