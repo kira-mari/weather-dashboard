@@ -318,37 +318,39 @@ if uploaded_file is not None:
     
     # Créer la carte avec les points GPS
     fig_map = go.Figure()
-    
+   
     # Ajouter la trace du trajet
     fig_map.add_trace(go.Scattermapbox(
-        lat=df['latitude'],
-        lon=df['longitude'],
-        mode='lines+markers',
-        marker=dict(
-            size=8,
-            color=df.index,
-            colorscale='Viridis',
-            showscale=True,
-            colorbar=dict(
-                title="Séquence",
-                titleside="right",
-                tickmode="linear"
-            )
-        ),
-        line=dict(
-            width=2,
-            color='rgba(255, 107, 107, 0.6)'
-        ),
-        text=df['heure'],
-        hovertemplate='<b>Heure:</b> %{text}<br>' +
-                      '<b>Latitude:</b> %{lat:.6f}<br>' +
-                      '<b>Longitude:</b> %{lon:.6f}<br>' +
-                      '<b>Température:</b> ' + df['temperature'].astype(str) + '°C<br>' +
-                      '<b>Humidité:</b> ' + df['humidite'].astype(str) + '%<br>' +
-                      '<extra></extra>',
-        name='Trajet'
-    ))
-    
+    lat=df['latitude'],
+    lon=df['longitude'],
+    mode='lines+markers',
+    marker=dict(
+        size=8,
+        color=df.index,
+        colorscale='Viridis',
+        showscale=True,
+        colorbar=dict(
+            title=dict(
+                text="Séquence",
+                side="right"
+            ),
+            tickmode="linear"
+        )
+    ),
+    line=dict(
+        width=2,
+        color='rgba(255, 107, 107, 0.6)'
+    ),
+    text=df['heure'],
+    hovertemplate='<b>Heure:</b> %{text}<br>' +
+                  '<b>Latitude:</b> %{lat:.6f}<br>' +
+                  '<b>Longitude:</b> %{lon:.6f}<br>' +
+                  '<b>Température:</b> ' + df['temperature'].astype(str) + '°C<br>' +
+                  '<b>Humidité:</b> ' + df['humidite'].astype(str) + '%<br>' +
+                  '<extra></extra>',
+    name='Trajet'
+))
+
     # Configuration de la carte
     center_lat = df['latitude'].mean()
     center_lon = df['longitude'].mean()
